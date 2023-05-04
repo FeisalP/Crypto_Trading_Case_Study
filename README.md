@@ -1,4 +1,4 @@
-# cryptocurrency_trading_case_study
+# Cryptocurrency_Trading_Case_Study
 A data analysis case study using PostgreSQL
 <br />
 <br />
