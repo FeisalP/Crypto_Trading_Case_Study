@@ -32,7 +32,7 @@ SELECT
 	ticker,
 	MIN(price) AS min_price,
 	MAX(price) AS max_price,
--- 	Need to cast average & spread to numeric for rounding
+-- Need to cast average & spread to numeric for rounding
 	ROUND(AVG(price):: NUMERIC, 2) AS average_price,
 	ROUND((MAX(price)-MIN(price))::NUMERIC, 2) AS spread 
 FROM prices
@@ -48,8 +48,8 @@ GROUP BY calendar_year, ticker
 -- ORDER BY calendar_year, ticker
 SELECT 
 	ticker,
--- 	CAST as DATE to display the date only without the time
--- 	Use DATE_TRUNC to group the record by month
+-- CAST as DATE to display the date only without the time
+-- Use DATE_TRUNC to group the record by month
 	DATE_TRUNC('MON', market_date)::DATE AS month_start,
 	ROUND(AVG(price)::NUMERIC, 2) AS average_price
 FROM prices
